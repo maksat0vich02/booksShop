@@ -89,6 +89,7 @@ const Header = ({ pullValue }) => {
               >
                 About us
               </a>
+              <NavLink to="/admin">Admin</NavLink>
             </nav>
 
             <div className="header-btn">

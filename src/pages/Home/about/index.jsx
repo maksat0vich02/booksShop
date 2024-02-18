@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaShoppingBasket } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const [product, setProduct] = useState([]);
+  const navigate = useNavigate();
+
+  function getOrderData(index) {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    data = data[0];
+    let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
+    orderStorage.push(data);
+    localStorage.setItem("order", JSON.stringify(orderStorage));
+  }
+
+  function deleteData(id) {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    data = data.filter((el) => el.id !== id);
+    localStorage.setItem("books", JSON.stringify(data));
+    getbookData();
+  }
+
+  function getbookData() {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    setProduct(data);
+  }
+  console.log(product);
+
+  useEffect(() => {
+    getbookData();
+  }, []);
   return (
     <div>
       <about>
@@ -27,6 +57,39 @@ const About = () => {
                   helping you discover your next favorite book!
                 </p>
               </div>
+            </div>
+
+            <div className="book-get">
+              {product.map((el) => (
+                <div>
+                  <div className="book-data">
+                    <img src={el.image} alt="" />
+                    <div className="display-book">
+                      <div className="book-text">
+                        <h1>{el.name}</h1>
+                        <p>{el.price}$</p>
+                      </div>
+                      <div className="btn-all">
+                        <button
+                          onClick={() => deleteData(el.id)}
+                          className="btn-delete"
+                        >
+                          <RiDeleteBin5Line />
+                        </button>
+                        <button
+                          onClick={() => {
+                            getOrderData(el.id);
+                            navigate("/basket");
+                          }}
+                          className="btn-basket"
+                        >
+                          <FaShoppingBasket />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

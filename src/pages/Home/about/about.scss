@@ -22,3 +22,63 @@
     }
   }
 }
+
+.book-get {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  overflow-x: scroll;
+}
+.btn-delete {
+  font-size: 40px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.book-data {
+  width: 500px;
+  height: 600px;
+  background: url("https://i.pinimg.com/564x/31/22/02/312202de89b7aec6df5a1a1adbbfe546.jpg")
+    no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.book-data img {
+  width: 450px;
+  height: 350px;
+  border: solid 7px white;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.display-book {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 50px 0;
+}
+.book-data h1 {
+  color: white;
+  font-size: 45px;
+}
+.book-data p {
+  font-size: 30px;
+  color: white;
+}
+.btn-basket {
+  font-size: 40px;
+  background-color: rgb(219, 219, 43);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.btn-all {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

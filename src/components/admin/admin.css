@@ -1,0 +1,29 @@
+.admin {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.boxes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 200px 0;
+}
+.boxes input {
+  width: 550px;
+  padding: 20px 15px;
+  border-radius: 15px;
+  font-size: 30px;
+}
+.boxes button {
+  padding: 10px 25px;
+  color: white;
+  background-color: dodgerblue;
+  font-size: 42px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
