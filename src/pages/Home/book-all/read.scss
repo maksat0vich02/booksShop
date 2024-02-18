@@ -1,0 +1,130 @@
+.read {
+  margin-top: 70px;
+  padding: 100px 0;
+  .read-all {
+    h1 {
+      font-size: 45px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 30px;
+      font-weight: 400;
+      color: #19272e;
+      background: url() no-repeat;
+    }
+  }
+  .read-filter {
+    margin-top: 60px;
+    .filter-text {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      p {
+        color: #818eea;
+        font-size: 22px;
+        border-bottom: solid 2px #818eea;
+        height: -10px;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+
+  p {
+    font-size: 16px;
+  }
+  input {
+    border-radius: 25px;
+    border: none;
+    outline: none;
+  }
+}
+.filter-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+.bookBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 500px;
+}
+.booksBlock {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  gap: 50px;
+  justify-content: start;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+.booksShow {
+  width: 200px;
+  height: 400px;
+  padding: 30px 0;
+}
+
+.select-one {
+  padding: 10px 25px;
+  font-size: 18px;
+  border-radius: 15px;
+  color: #818eea;
+}
+.h1_genres {
+  position: absolute;
+  top: 30pc;
+  font-size: 22px;
+}
+
+.btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  margin-top: -40px;
+
+  .btnOne {
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #818eea;
+    font-weight: 700;
+    border: solid 3px #818eea;
+  }
+  .btnTwo {
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #818eea;
+    font-weight: 700;
+    border: solid 3px #818eea;
+  }
+}
+.btn-div button {
+}

@@ -1,0 +1,24 @@
+.about {
+  margin-top: 150px;
+  h1 {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+  }
+
+  .about_all {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .about-left {
+      img {
+        width: 800px;
+      }
+    }
+    .about-right {
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+}

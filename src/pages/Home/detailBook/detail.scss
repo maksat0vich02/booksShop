@@ -1,0 +1,55 @@
+.detail-all {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  .detail-div {
+    padding: 100px 0;
+    img {
+      width: 400px;
+    }
+    h1 {
+      font-size: 45px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+  .detail-right {
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .five-div {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin: 30px 0;
+      p {
+        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+      .asses {
+        color: rgb(255, 208, 0);
+      }
+    }
+  }
+}
+.btn-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 60pc;
+  gap: 20px;
+  button {
+    padding: 8px;
+    font-size: 28px;
+    border: none;
+    border: solid 2px deepskyblue;
+    background-color: transparent;
+    border-radius: 10px;
+  }
+}

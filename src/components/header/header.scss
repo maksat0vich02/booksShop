@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+header {
+  box-shadow: 0 0 5px 0 grey;
+  transition: 0.5s;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  margin-left: 15px;
+  font-size: 18px;
+}
+nav h4 {
+  font-size: 20px;
+  color: rgb(26, 163, 204);
+}
+.header-btn {
+  font-size: 22px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header-btn-two {
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+.header_box {
+  width: 60px;
+  height: 25px;
+  background: url("https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg")
+    no-repeat center/cover;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.header_travel {
+  width: 30px;
+  height: 20px;
+  background-color: white;
+  border-radius: 28px;
+  transition: 1s;
+}
+.header-btn input {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+}

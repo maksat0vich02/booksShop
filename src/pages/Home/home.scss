@@ -1,0 +1,25 @@
+#home {
+  margin-top: 40px;
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40vh;
+    gap: 13px;
+    h1 {
+      font-size: 45px;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 4px;
+    }
+    p {
+      color: #19272e;
+      font-size: 18px;
+    }
+  }
+  img {
+    width: 100%;
+    opacity: 70%;
+  }
+}
