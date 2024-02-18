@@ -21,6 +21,7 @@ const Basket = () => {
               <div>
                 <img src={el.image} alt="" />
                 <h1>{el.name}</h1>
+                <p>{el.price}</p>
               </div>
             ))}
           </div>
