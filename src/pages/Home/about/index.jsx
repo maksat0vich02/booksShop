@@ -4,35 +4,21 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  const [data, setData] = useState([]);
-  console.log(data);
-  const navigate = useNavigate();
+  // function getOrderData() {
+  //   let data = JSON.parse(localStorage.getItem("books")) || [];
+  //   data = data[0];
+  //   let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
+  //   orderStorage.push(data);
+  //   localStorage.setItem("order", JSON.stringify(orderStorage));
+  // }
 
-  function getOrderData() {
-    let data = JSON.parse(localStorage.getItem("books")) || [];
-    data = data[0];
-    let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
-    orderStorage.push(data);
-    localStorage.setItem("order", JSON.stringify(orderStorage));
-  }
+  // function deleteData(id) {
+  //   let data = JSON.parse(localStorage.getItem("books")) || [];
+  //   data = data.filter((el) => el.id !== id);
+  //   localStorage.setItem("books", JSON.stringify(data));
+  //   getbookData();
+  // }
 
-  function deleteData(id) {
-    let data = JSON.parse(localStorage.getItem("books")) || [];
-    data = data.filter((el) => el.id !== id);
-    localStorage.setItem("books", JSON.stringify(data));
-    getbookData();
-  }
-
-  function getbookData() {
-    let data = JSON.parse(localStorage.getItem("books")) || [];
-
-    setData(data);
-  }
-  console.log(data);
-
-  useEffect(() => {
-    getbookData();
-  }, []);
   return (
     <div>
       <about>
@@ -59,43 +45,6 @@ const About = () => {
                   helping you discover your next favorite book!
                 </p>
               </div>
-            </div>
-
-            <div className="book-get">
-              {data ? (
-                data.map((el) => (
-                  <div>
-                    <div className="book-data">
-                      <img src={el.image} alt="" />
-                      <div className="display-book">
-                        <div className="book-text">
-                          <h1>{el.name}</h1>
-                          <p>{el.price}$</p>
-                        </div>
-                        <div className="btn-all">
-                          <button
-                            onClick={() => deleteData(el.id)}
-                            className="btn-delete"
-                          >
-                            <RiDeleteBin5Line />
-                          </button>
-                          <button
-                            onClick={() => {
-                              getOrderData(el.id);
-                              navigate("/basket");
-                            }}
-                            className="btn-basket"
-                          >
-                            <FaShoppingBasket />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <h1>loading</h1>
-              )}
             </div>
           </div>
         </div>

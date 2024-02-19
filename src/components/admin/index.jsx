@@ -51,11 +51,11 @@ const Admin = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 className="priceInput"
                 type="text"
-                placeholder="priceBook"
+                placeholder="surname"
               />
               <button
                 onClick={() => {
-                  nav("/about");
+                  nav("/books");
                   getdataHome();
                 }}
               >

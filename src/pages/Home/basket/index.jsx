@@ -6,6 +6,13 @@ const Basket = () => {
   const [orders, setOrders] = useState([]);
   const { basket, setBasket } = useMainContext();
 
+  function orderDeletedata(id) {
+    let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
+    orderStorage = orderStorage.filter((el) => el.id !== id);
+    localStorage.setItem("order", JSON.stringify(orderStorage));
+    getOrderStorage();
+  }
+
   function getOrderStorage() {
     let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
     setOrders(orderStorage);
@@ -31,7 +38,12 @@ const Basket = () => {
                     </div>
 
                     <div className="basket-btn">
-                      <button className="basket-delete">delete</button>
+                      <button
+                        onClick={() => orderDeletedata(el.id)}
+                        className="basket-delete"
+                      >
+                        delete
+                      </button>
                       <div className="plus-div">
                         <button
                           onClick={() => {
