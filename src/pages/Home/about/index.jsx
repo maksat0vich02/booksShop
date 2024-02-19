@@ -4,6 +4,21 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  // function getOrderData() {
+  //   let data = JSON.parse(localStorage.getItem("books")) || [];
+  //   data = data[0];
+  //   let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
+  //   orderStorage.push(data);
+  //   localStorage.setItem("order", JSON.stringify(orderStorage));
+  // }
+
+  // function deleteData(id) {
+  //   let data = JSON.parse(localStorage.getItem("books")) || [];
+  //   data = data.filter((el) => el.id !== id);
+  //   localStorage.setItem("books", JSON.stringify(data));
+  //   getbookData();
+  // }
+
   const [product, setProduct] = useState([]);
   const navigate = useNavigate();
 

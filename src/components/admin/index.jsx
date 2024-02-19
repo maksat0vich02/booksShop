@@ -52,6 +52,11 @@ const Admin = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 className="priceInput"
                 type="text"
+                placeholder="surname"
+              />
+              <button
+                onClick={() => {
+                  nav("/books");
                 placeholder="priceBook"
               />
               <button

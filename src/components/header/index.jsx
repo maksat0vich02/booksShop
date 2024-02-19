@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = ({ pullValue }) => {
   const navigate = useNavigate();
-  const { darkMode, setDarkMode } = useMainContext();
+  const { darkMode, setDarkMode, basket } = useMainContext();
   const DarkMode = JSON.parse(localStorage.getItem("dark_mode"));
   function getLocal() {
     localStorage.setItem("dark_mode", JSON.stringify(darkMode));
@@ -105,8 +105,13 @@ const Header = ({ pullValue }) => {
                   placeholder="search . . ."
                 />
               </button>
-              <button className="header-btn-two">
-                <FaCartShopping />
+              <button
+                onClick={() => {
+                  navigate("/basket");
+                }}
+                className="header-btn-two"
+              >
+                <FaCartShopping /> {basket}
               </button>
               <div
                 onClick={() => {

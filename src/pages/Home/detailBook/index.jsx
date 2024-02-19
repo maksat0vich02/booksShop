@@ -7,6 +7,12 @@ import { AiTwotoneMail } from "react-icons/ai";
 const DetailBook = () => {
   const [bookHave, setBookHave] = useState([]);
   const [basket, setBasket] = useState(0);
+  const [dataone, setData] = useState([]);
+
+  function getbookData() {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    setData(data);
+  }
 
   const { id } = useParams();
 
@@ -19,6 +25,7 @@ const DetailBook = () => {
 
   useEffect(() => {
     getBookParams();
+    getbookData();
   }, []);
 
   return (
@@ -81,6 +88,8 @@ const DetailBook = () => {
                 </div>
               </div>
             ))}
+
+            {<div></div>}
           </div>
         </div>
       </div>

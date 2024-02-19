@@ -10,7 +10,11 @@ const MainContext = ({ children }) => {
     localStorage.setItem("dark_mode", JSON.stringify(darkMode));
   }
 
+  const [basket, setBasket] = useState(0);
+
   const values = {
+    setBasket,
+    basket,
     darkMode,
     setDarkMode,
   };

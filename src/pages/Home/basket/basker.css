@@ -1,0 +1,79 @@
+.basket-data {
+  width: 500px;
+  height: 600px;
+  background: url("https://i.pinimg.com/564x/31/22/02/312202de89b7aec6df5a1a1adbbfe546.jpg")
+    no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.basket-data img {
+  width: 400px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: solid 6px white;
+}
+.basket-all {
+  display: flex;
+  align-items: center;
+  background-color: darkcyan;
+  width: 490px;
+  gap: 100px;
+  padding: 50px 0;
+  border-radius: 20px;
+}
+.basket-btn button {
+  padding: 10px 13px;
+  font-size: 23px;
+}
+.basket-text h1 {
+  font-size: 20px;
+  background-color: darkcyan;
+  padding: 10px 18px;
+  border-radius: 20px;
+  color: white;
+}
+.basket-text {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.basket-text p {
+  padding: 10px 18px;
+  border-radius: 20px;
+  color: white;
+  font-size: 22px;
+}
+
+.basket-btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  align-items: center;
+  margin-bottom: 13px;
+}
+.plus-div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.basket-delete {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+.plus-div button {
+  border: none;
+  background-color: transparent;
+  border: solid 3px white;
+  color: white;
+  font-size: 28px;
+  border-radius: 15px;
+}
