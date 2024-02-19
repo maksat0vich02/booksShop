@@ -13,6 +13,8 @@ const Basket = () => {
     getOrderStorage();
   }
 
+const Basket = () => {
+  const [orders, setOrders] = useState([]);
   function getOrderStorage() {
     let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
     setOrders(orderStorage);
@@ -66,6 +68,8 @@ const Basket = () => {
                     </div>
                   </div>
                 </div>
+                <img src={el.image} alt="" />
+                <h1>{el.name}</h1>
               </div>
             ))}
           </div>

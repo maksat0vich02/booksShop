@@ -14,6 +14,7 @@ const Admin = () => {
       name,
       price,
       id: Date.now(),
+      index: Date.now(),
     };
     let data = JSON.parse(localStorage.getItem("books")) || [];
     data.push(obj);
@@ -56,6 +57,11 @@ const Admin = () => {
               <button
                 onClick={() => {
                   nav("/books");
+                placeholder="priceBook"
+              />
+              <button
+                onClick={() => {
+                  nav("/about");
                   getdataHome();
                 }}
               >
