@@ -14,7 +14,6 @@ const Admin = () => {
       name,
       price,
       id: Date.now(),
-      index: Date.now(),
     };
     let data = JSON.parse(localStorage.getItem("books")) || [];
     data.push(obj);

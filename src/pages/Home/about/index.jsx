@@ -4,10 +4,11 @@ import { FaShoppingBasket } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const About = () => {
-  const [product, setProduct] = useState([]);
+  const [data, setData] = useState([]);
+  console.log(data);
   const navigate = useNavigate();
 
-  function getOrderData(index) {
+  function getOrderData() {
     let data = JSON.parse(localStorage.getItem("books")) || [];
     data = data[0];
     let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
@@ -24,9 +25,10 @@ const About = () => {
 
   function getbookData() {
     let data = JSON.parse(localStorage.getItem("books")) || [];
-    setProduct(data);
+
+    setData(data);
   }
-  console.log(product);
+  console.log(data);
 
   useEffect(() => {
     getbookData();
@@ -60,36 +62,40 @@ const About = () => {
             </div>
 
             <div className="book-get">
-              {product.map((el) => (
-                <div>
-                  <div className="book-data">
-                    <img src={el.image} alt="" />
-                    <div className="display-book">
-                      <div className="book-text">
-                        <h1>{el.name}</h1>
-                        <p>{el.price}$</p>
-                      </div>
-                      <div className="btn-all">
-                        <button
-                          onClick={() => deleteData(el.id)}
-                          className="btn-delete"
-                        >
-                          <RiDeleteBin5Line />
-                        </button>
-                        <button
-                          onClick={() => {
-                            getOrderData(el.id);
-                            navigate("/basket");
-                          }}
-                          className="btn-basket"
-                        >
-                          <FaShoppingBasket />
-                        </button>
+              {data ? (
+                data.map((el) => (
+                  <div>
+                    <div className="book-data">
+                      <img src={el.image} alt="" />
+                      <div className="display-book">
+                        <div className="book-text">
+                          <h1>{el.name}</h1>
+                          <p>{el.price}$</p>
+                        </div>
+                        <div className="btn-all">
+                          <button
+                            onClick={() => deleteData(el.id)}
+                            className="btn-delete"
+                          >
+                            <RiDeleteBin5Line />
+                          </button>
+                          <button
+                            onClick={() => {
+                              getOrderData(el.id);
+                              navigate("/basket");
+                            }}
+                            className="btn-basket"
+                          >
+                            <FaShoppingBasket />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))
+              ) : (
+                <h1>loading</h1>
+              )}
             </div>
           </div>
         </div>
