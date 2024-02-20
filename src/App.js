@@ -10,6 +10,8 @@ import DetailBook from "./pages/Home/detailBook";
 import Admin from "./components/admin";
 import About from "./pages/Home/about";
 import Basket from "./pages/Home/basket";
+import Books from "./pages/Home/books-home";
+import Local from "./pages/Home/local-basket";
 
 function App() {
   const { darkMode } = useMainContext();
@@ -35,6 +37,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/basket" element={<Basket />} />
         {/* <Route path="/book/basket/booksId" element={}/> */}
+        <Route path="/books" element={<Books />} />
+        <Route path="/local" element={<Local />} />
       </Routes>
       <Footer />
     </div>

@@ -1,7 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import { data } from "../../../bookKey";
+import { useEffect, useState } from "react";
 
 const Books = () => {
+  const [dataOne, setdata] = useState([]);
+
+  function getDataBook() {
+    let data = JSON.parse(localStorage.getItem("book")) || [];
+    setdata(data);
+  }
+
+  useEffect(() => {
+    getDataBook();
+  }, []);
   return (
     <div>
       <book>
@@ -27,6 +38,20 @@ const Books = () => {
                   </Link>
                   <h1>{el.name}</h1>
                   <p>{el.surName}</p>
+                </div>
+              ))}
+
+              {dataOne.map((el) => (
+                <div>
+                  <div className="book_div">
+                    <Link to={"/local"}>
+                      {" "}
+                      <img src={el.img} alt="" />
+                    </Link>
+
+                    <h1>{el.name}</h1>
+                    <p>{el.praice}$</p>
+                  </div>
                 </div>
               ))}
             </div>

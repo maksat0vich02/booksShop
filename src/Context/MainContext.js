@@ -4,13 +4,18 @@ const mainContext = createContext();
 
 export const useMainContext = () => useContext(mainContext);
 const DarkMode = JSON.parse(localStorage.getItem("dark_mode"));
+
 const MainContext = ({ children }) => {
   const [darkMode, setDarkMode] = useState(DarkMode || false);
   function setStirage() {
     localStorage.setItem("dark_mode", JSON.stringify(darkMode));
   }
 
+  const [count, setCount] = useState(0);
+
   const values = {
+    setCount,
+    count,
     darkMode,
     setDarkMode,
   };

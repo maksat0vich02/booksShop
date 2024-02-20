@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import { data } from "../../../bookKey";
 import { AiOutlineStar } from "react-icons/ai";
 import { AiTwotoneMail } from "react-icons/ai";
+import { useMainContext } from "../../../Context/MainContext";
 
 const DetailBook = () => {
   const [bookHave, setBookHave] = useState([]);
-  const [basket, setBasket] = useState(0);
+  const { count, setCount } = useMainContext();
 
   const { id } = useParams();
 
@@ -31,7 +32,7 @@ const DetailBook = () => {
                 <div className="detail-div">
                   <img src={el.image} alt="" />
                   <h1>{el.name}</h1>
-                  <p>{el.surName}</p>
+                  <p>{el.praice}</p>
                 </div>
                 <div className="detail-right">
                   <h1>{el.information}</h1>
@@ -60,17 +61,17 @@ const DetailBook = () => {
                     <div className="btn-detail">
                       <button
                         onClick={() => {
-                          if (basket > 1) {
-                            return setBasket(basket - 1);
+                          if (count > 1) {
+                            return setCount(count - 1);
                           }
                         }}
                       >
                         -
                       </button>
-                      <p>{basket}</p>
+                      <p>{count}</p>
                       <button
                         onClick={() => {
-                          setBasket(basket + 1);
+                          setCount(count + 1);
                         }}
                       >
                         +
