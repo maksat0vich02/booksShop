@@ -51,6 +51,7 @@ const Books = () => {
 
                     <h1>{el.name}</h1>
                     <p>{el.praice}$</p>
+
                   </div>
                 </div>
               ))}

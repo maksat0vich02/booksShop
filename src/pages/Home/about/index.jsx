@@ -1,6 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { FaShoppingBasket } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  // function getOrderData() {
+  //   let data = JSON.parse(localStorage.getItem("books")) || [];
+  //   data = data[0];
+  //   let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
+  //   orderStorage.push(data);
+  //   localStorage.setItem("order", JSON.stringify(orderStorage));
+  // }
+
+  // function deleteData(id) {
+  //   let data = JSON.parse(localStorage.getItem("books")) || [];
+  //   data = data.filter((el) => el.id !== id);
+  //   localStorage.setItem("books", JSON.stringify(data));
+  //   getbookData();
+  // }
+
+  const [product, setProduct] = useState([]);
+  const navigate = useNavigate();
+
+  function getOrderData(index) {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    data = data[0];
+    let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
+    orderStorage.push(data);
+    localStorage.setItem("order", JSON.stringify(orderStorage));
+  }
+
+  function deleteData(id) {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    data = data.filter((el) => el.id !== id);
+    localStorage.setItem("books", JSON.stringify(data));
+    getbookData();
+  }
+
+  function getbookData() {
+    let data = JSON.parse(localStorage.getItem("books")) || [];
+    setProduct(data);
+  }
+  console.log(product);
+
+  useEffect(() => {
+    getbookData();
+  }, []);
   return (
     <div>
       <about>
@@ -28,7 +73,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-
             <div className="book-get"></div>
           </div>
         </div>

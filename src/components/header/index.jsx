@@ -8,7 +8,7 @@ const Header = ({ pullValue }) => {
   const [modal, setModal] = useState(false);
   const { count } = useMainContext();
   const navigate = useNavigate();
-  const { darkMode, setDarkMode } = useMainContext();
+  const { darkMode, setDarkMode, basket } = useMainContext();
   const DarkMode = JSON.parse(localStorage.getItem("dark_mode"));
   function getLocal() {
     localStorage.setItem("dark_mode", JSON.stringify(darkMode));
@@ -107,6 +107,7 @@ const Header = ({ pullValue }) => {
               >
                 Admin
               </NavLink>
+
             </nav>
             <div
               style={{

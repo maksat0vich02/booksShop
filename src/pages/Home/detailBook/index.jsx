@@ -20,6 +20,7 @@ const DetailBook = () => {
 
   useEffect(() => {
     getBookParams();
+    getbookData();
   }, []);
 
   return (
@@ -82,6 +83,8 @@ const DetailBook = () => {
                 </div>
               </div>
             ))}
+
+            {<div></div>}
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ const Admin = () => {
   const [img, setImage] = useState("");
   const [name, setName] = useState("");
   const [praice, setPrice] = useState("");
+
   const nav = useNavigate();
 
   function getdataHome() {
@@ -51,6 +52,12 @@ const Admin = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 className="priceInput"
                 type="text"
+
+                placeholder="surname"
+              />
+              <button
+                onClick={() => {
+                  nav("/books");
                 placeholder="priceBook"
               />
               <button

@@ -13,6 +13,7 @@ import Basket from "./pages/Home/basket";
 import Books from "./pages/Home/books-home";
 import Local from "./pages/Home/local-basket";
 
+
 function App() {
   const { darkMode } = useMainContext();
   const [getPull, setGetPull] = useState("");
@@ -36,7 +37,6 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/about" element={<About />} />
         <Route path="/basket" element={<Basket />} />
-        {/* <Route path="/book/basket/booksId" element={}/> */}
         <Route path="/books" element={<Books />} />
         <Route path="/local" element={<Local />} />
       </Routes>
