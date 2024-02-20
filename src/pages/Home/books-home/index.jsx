@@ -3,17 +3,16 @@ import { data } from "../../../bookKey";
 import { useEffect, useState } from "react";
 
 const Books = () => {
-  const [dataone, setData] = useState([]);
+  const [dataOne, setdata] = useState([]);
 
-  function getbookData() {
-    let data = JSON.parse(localStorage.getItem("books")) || [];
-    setData(data);
+  function getDataBook() {
+    let data = JSON.parse(localStorage.getItem("book")) || [];
+    setdata(data);
   }
 
   useEffect(() => {
-    getbookData();
+    getDataBook();
   }, []);
-
   return (
     <div>
       <book>
@@ -42,15 +41,17 @@ const Books = () => {
                 </div>
               ))}
 
-              {dataone.map((el) => (
+              {dataOne.map((el) => (
                 <div>
                   <div className="book_div">
-                    <Link to={`/book/detailBook/${el.id}`}>
+                    <Link to={"/local"}>
                       {" "}
-                      <img src={el.image} alt="" />
+                      <img src={el.img} alt="" />
                     </Link>
+
                     <h1>{el.name}</h1>
-                    <p>{el.price}</p>
+                    <p>{el.praice}$</p>
+
                   </div>
                 </div>
               ))}

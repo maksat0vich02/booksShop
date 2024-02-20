@@ -73,39 +73,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-
-            <div className="book-get">
-              {product.map((el) => (
-                <div>
-                  <div className="book-data">
-                    <img src={el.image} alt="" />
-                    <div className="display-book">
-                      <div className="book-text">
-                        <h1>{el.name}</h1>
-                        <p>{el.price}$</p>
-                      </div>
-                      <div className="btn-all">
-                        <button
-                          onClick={() => deleteData(el.id)}
-                          className="btn-delete"
-                        >
-                          <RiDeleteBin5Line />
-                        </button>
-                        <button
-                          onClick={() => {
-                            getOrderData(el.id);
-                            navigate("/basket");
-                          }}
-                          className="btn-basket"
-                        >
-                          <FaShoppingBasket />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className="book-get"></div>
           </div>
         </div>
       </about>

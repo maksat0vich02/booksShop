@@ -3,22 +3,22 @@ import "./admin.css";
 import { Navigate, useNavigate } from "react-router-dom";
 
 const Admin = () => {
-  const [image, setImage] = useState("");
+  const [img, setImage] = useState("");
   const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
+  const [praice, setPrice] = useState("");
+
   const nav = useNavigate();
 
   function getdataHome() {
     let obj = {
-      image,
+      img,
       name,
-      price,
+      praice,
       id: Date.now(),
-      index: Date.now(),
     };
-    let data = JSON.parse(localStorage.getItem("books")) || [];
+    let data = JSON.parse(localStorage.getItem("book")) || [];
     data.push(obj);
-    localStorage.setItem("books", JSON.stringify(data));
+    localStorage.setItem("book", JSON.stringify(data));
   }
 
   return (
@@ -52,6 +52,7 @@ const Admin = () => {
                 onChange={(e) => setPrice(e.target.value)}
                 className="priceInput"
                 type="text"
+
                 placeholder="surname"
               />
               <button
@@ -61,8 +62,8 @@ const Admin = () => {
               />
               <button
                 onClick={() => {
-                  nav("/about");
                   getdataHome();
+                  nav("/books");
                 }}
               >
                 Create

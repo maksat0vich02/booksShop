@@ -1,0 +1,60 @@
+.local-div img {
+  width: 300px;
+  border-radius: 20px;
+}
+.local {
+  padding: 100px 0;
+}
+
+.local-div h1 {
+  font-size: 40px;
+  font-weight: 400;
+}
+.local-div p {
+  font-size: 34px;
+}
+.local-div p {
+  font-size: 20px;
+}
+.local-div h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.display-local {
+  display: flex;
+
+  gap: 150px;
+}
+.btn-deleteTwo button {
+  padding: 10px 25px;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  font-size: 22px;
+  color: white;
+}
+.btn-minus {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+.btn-minus button {
+  font-size: 32px;
+  padding: 8px;
+  border-radius: 15px;
+  border: none;
+  background-color: transparent;
+  border: solid 3px rgb(10, 126, 194);
+}
+.local-center {
+  margin-bottom: 40px;
+}
+.local-center h3 {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+.local-p {
+  font-size: 25px;
+}

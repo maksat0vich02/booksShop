@@ -1,27 +1,26 @@
 import React, { useEffect, useState } from "react";
-import "./basker.css";
 import { useMainContext } from "../../../Context/MainContext";
+import { AiOutlineStar } from "react-icons/ai";
 
 const Basket = () => {
-  const [orders, setOrders] = useState([]);
-  const { basket, setBasket } = useMainContext();
+  const [basket, setBasket] = useState([]);
+  const { count, setCount } = useMainContext();
+  const [color, setColor] = useState(false);
 
-  function orderDeletedata(id) {
-    let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
-    orderStorage = orderStorage.filter((el) => el.id !== id);
-    localStorage.setItem("order", JSON.stringify(orderStorage));
-    getOrderStorage();
+  function removeBasketData(id) {
+    let orders = JSON.parse(localStorage.getItem("order")) || [];
+    orders = orders.filter((el) => el.id !== id);
+    localStorage.setItem("order", JSON.stringify(orders));
+    getBasketData();
   }
 
-const Basket = () => {
-  const [orders, setOrders] = useState([]);
-  function getOrderStorage() {
-    let orderStorage = JSON.parse(localStorage.getItem("order")) || [];
-    setOrders(orderStorage);
-    localStorage.setItem("order", JSON.stringify(orderStorage));
+  function getBasketData() {
+    let orders = JSON.parse(localStorage.getItem("order")) || [];
+    setBasket(orders);
   }
+
   useEffect(() => {
-    getOrderStorage();
+    getBasketData();
   }, []);
 
   return (
@@ -29,47 +28,47 @@ const Basket = () => {
       <basket>
         <div className="container">
           <div className="basket">
-            {orders.map((el) => (
+            {basket.map((el) => (
               <div>
-                <div className="basket-data">
-                  <img src={el.image} alt="" />
-                  <div className="basket-all">
-                    <div className="basket-text">
-                      <h1>{el.name}</h1>
-                      <p>{el.price}$</p>
-                    </div>
+                <div className="display-local">
+                  <div className="local-div">
+                    <img src={el.img} alt="" />
+                    <h1>{el.name}</h1>
+                    <p>{count * 15}$</p>
+                  </div>
 
-                    <div className="basket-btn">
+                  <div className="local-right">
+                    <div className="local-center">
+                      <h3>
+                        оценки:{" "}
+                        <AiOutlineStar
+                          style={{ color: color ? "yellow" : "" }}
+                          onClick={() => {
+                            setColor(!false);
+                          }}
+                        />
+                        <AiOutlineStar
+                          style={{ color: color ? "yellow" : "" }}
+                          onClick={() => {
+                            setColor(!false);
+                          }}
+                        />
+                        <AiOutlineStar />
+                        <AiOutlineStar />
+                        <AiOutlineStar />{" "}
+                      </h3>
+                    </div>
+                    <div className="btn-deleteTwo">
                       <button
-                        onClick={() => orderDeletedata(el.id)}
-                        className="basket-delete"
+                        onClick={() => {
+                          removeBasketData(el.id);
+                        }}
                       >
                         delete
                       </button>
-                      <div className="plus-div">
-                        <button
-                          onClick={() => {
-                            if (basket > 1) {
-                              return setBasket(basket - 1);
-                            }
-                          }}
-                        >
-                          -
-                        </button>
-                        <p>{basket}</p>
-                        <button
-                          onClick={() => {
-                            setBasket(basket + 1);
-                          }}
-                        >
-                          +
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
-                <img src={el.image} alt="" />
-                <h1>{el.name}</h1>
               </div>
             ))}
           </div>
